@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「まちかど水族館」街角から始まる水族館があってもいい</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Zen Maru Gothic -->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background-color: #ffffff; /* Light blue/green background for an aquatic feel */
+            color: #383c48; /* Darker text for readability */
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0f7fa;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4dd0e1; /* Aqua blue */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #26c6da; /* Darker Aqua */
+        }
+
+        /* Subtle wave effect for section dividers (conceptual, using border for simplicity) */
+        .section-divider {
+            border-bottom: 3px solid #b2ebf2; /* Lighter aqua for subtle divider */
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        /* Tab specific styles */
+        .tab-button.active {
+            background-color: #06b6d4; /* Tailwind cyan-500 */
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="antialiased leading-relaxed">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-400 to-cyan-500 text-white p-6 md:p-8 shadow-xl rounded-b-3xl">
+        <div class="container mx-auto text-center py-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-lg">
+                <span class="inline-block transform -rotate-3 mr-2">🐟</span> まちかど水族館 <span class="inline-block transform rotate-3 ml-2">🐠</span>
+            </h1>
+            <p class="text-xl md:text-3xl font-light mb-2">
+                函館の街に、水族館創ってみた。
+            </p>
+            <p class="text-lg md:text-xl font-medium mt-4 px-4 py-2 bg-white bg-opacity-20 rounded-full inline-block shadow-md">
+                まちすいが創る、心に残る海洋体験
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12 max-w-4xl">
+        <!-- Tab Navigation -->
+        <nav class="flex justify-center mb-8 bg-white p-2 rounded-pill shadow-md">
+            <button class="tab-button active flex-1 py-3 px-4 mx-1 text-center font-semibold rounded-xl text-cyan-700 hover:bg-cyan-100 transition-all duration-300" onclick="openTab(event, 'about')">
+                まちかど水族館について
+            </button>
+            <button class="tab-button flex-1 py-3 px-4 mx-1 text-center font-semibold rounded-xl text-cyan-700 hover:bg-cyan-100 transition-all duration-300" onclick="openTab(event, 'exhibits')">
+                展示の魅力
+            </button>
+            <button class="tab-button flex-1 py-3 px-4 mx-1 text-center font-semibold rounded-xl text-cyan-700 hover:bg-cyan-100 transition-all duration-300" onclick="openTab(event, 'future')">
+                未来の水族館
+            </button>
+        </nav>
+
+        <!-- Tab Content: まちかど水族館について -->
+        <div id="about" class="tab-content">
+            <!-- Introduction Section -->
+            <section class="bg-white p-6 md:p-8 rounded-2xl shadow-lg mb-10 overflow-hidden"> <!-- overflow-hidden でfloatを内包 -->
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-6 section-divider">
+                    函館の海をより身近に、より楽しく
+                </h2>
+                <!-- Placeholder image for Introduction Section -->
+                <!-- 画像を左にフロートさせ、右にテキストを回り込ませる -->
+                <img src="src/DSC09609.jpg" alt="函館の街並みと海" class="float-left mr-6 mb-4 w-full md:w-1/2 h-auto rounded-lg shadow-md border border-blue-200">
+                <p class="mb-5 text-base md:text-lg leading-relaxed">
+                    函館は「水産と観光の街」として多くの人々に親しまれています。しかしながら、大規模な水族館が不在である現状に対し、私たちは新たな可能性を追求しています。過去には約78億5,000万円という建設費用が課題となり、その実現には至りませんでした。
+                </p>
+                <p class="mb-5 text-base md:text-lg leading-relaxed">
+                    この課題を乗り越えるため、私たち「まちかど水族館」プロジェクトは、<span class="font-extrabold text-blue-600 text-xl">"まちなかの遊休スペースを活用して「小さな水族館をたくさん作る」"</span>という新しい視点のもと分散型水族館の構想を推進しています。この新しい形の水族館を通して、子どもから大人まで、誰もが気軽に函館の豊かな海洋生物や地域の水産業に触れ、海を身近に感じ、学び、楽しむ機会を創出することを目指しています。プロジェクトは2024年に開始され、現在8名の水族館が大好きなメンバーで活動しています。
+                </p>
+                <!-- floatを確実にクリアするための要素 -->
+                <div class="clear-both"></div>
+            </section>
+
+            <!-- Our Vision Section -->
+            <section class="bg-blue-50 p-6 md:p-8 rounded-2xl shadow-lg mb-10 overflow-hidden"> <!-- overflow-hidden でfloatを内包 -->
+                <h2 class="text-3xl md:text-4xl font-bold text-cyan-700 mb-6 section-divider">
+                    「まちかど水族館」に込められた想い
+                </h2>
+                <!-- Placeholder image for Our Vision Section -->
+                <!-- 画像を左にフロートさせ、右にテキストを回り込ませる -->
+                <img src="src/IMG_9548.jpg" alt="子供と海の生き物の触れ合い" class="float-left mr-6 mb-4 w-full md:w-1/3 h-auto rounded-lg shadow-md border border-green-200">
+                <p class="mb-5 text-base md:text-lg leading-relaxed">
+                    函館市は長年にわたり水産業を基幹産業として発展してきましたが、市民が海や魚、漁業、水産業に直接触れる機会は意外にも限られています。楽しく魚と触れ合える機会は限られているにも関わらず、テレビ等を通じて受動的に入ってくる情報は、資源量の減少や原材料の高騰といった経済的な側面が多く、水産業に対するポジティブなイメージが醸成されているとは言えません。
+                </p>
+                <p class="mb-5 text-base md:text-lg leading-relaxed">
+                    私たちは、このような現状に対し、自ら能動的に「遊び」「学び」の機会を得られる場所があれば、水産業や海洋教育について、その魅力や可能性がより広く伝わると確信しています。「まちかど水族館」は、単に魚を展示するだけでなく、函館の街の遊休スペースを活用することで、誰もが気軽に海の生物や水産業に触れ、興味を持つきっかけを創出します。
+                </p>
+                <p class="mb-5 text-base md:text-lg leading-relaxed">
+                    この取り組みを通じて、私たちは水産業や海の豊かさの魅力を再発見し、その未来を担う子どもたちが、体験を通してポジティブな視点と深い関心を持てるような機会を提供したいと考えています。同時に、まちに活気と賑わいを生み出し、地域の経済が循環する仕組みを構築することで、持続可能な地域社会の発展にも貢献していくことを目指しています。
+                </p>
+                <!-- floatを確実にクリアするための要素 -->
+                <div class="clear-both"></div>
+            </section>
+        </div>
+
+        <!-- Tab Content: 展示の魅力 -->
+        <div id="exhibits" class="tab-content hidden">
+            <section class="bg-white p-6 md:p-8 rounded-2xl shadow-lg mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-6 section-divider">
+                    「まちかど水族館」の展示体験
+                </h2>
+                <p class="mb-8 text-base md:text-lg leading-relaxed">
+                    私たちは、「まちかど水族館」を単なる展示施設に留めず、訪問者にとって記憶に残る感動体験を提供するため、知識欲を刺激する独創的なアプローチに取り組んでいます。
+                </p>
+
+                <!-- Interactive Quiz Section -->
+                <div class="mb-10 p-6 border-l-4 border-purple-500 bg-purple-50 rounded-xl shadow-md">
+                    <h3 class="text-2xl md:text-3xl font-bold text-purple-800 mb-4 flex items-center">
+                        <span class="mr-2 text-3xl">❓</span>生き物の生態クイズに挑戦！
+                    </h3>
+                    <p class="mb-6 text-sm md:text-base leading-relaxed">
+                        展示パネルに隠された秘密を解き明かしましょう。クイズに答えて、魚たちの驚きの生態を深く知ることができます。さあ、あなたの知識を試してみてください！
+                    </p>
+                    <div id="quiz-container" class="bg-white p-6 rounded-lg shadow-lg border border-purple-200">
+                        <p id="quiz-question" class="text-xl md:text-2xl font-semibold mb-4 text-center"></p>
+                        <div id="quiz-options" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <!-- Options will be loaded here by JS -->
+                        </div>
+                        <div id="quiz-feedback" class="text-center text-lg hidden"></div>
+                        <div class="flex justify-center mt-6">
+                            <button id="next-question-btn" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-purple-600 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 hidden">
+                                次のクイズへ
+                            </button>
+                            <button id="restart-quiz-btn" class="bg-gradient-to-r from-gray-400 to-gray-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-gray-500 hover:to-gray-600 transform hover:scale-105 transition-all duration-300 hidden">
+                                もう一度挑戦
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Living Things Fun Facts Section -->
+                <div class="mb-10 p-6 border-l-4 border-emerald-500 bg-emerald-50 rounded-xl shadow-md">
+                    <h3 class="text-2xl md:text-3xl font-bold text-emerald-800 mb-4 flex items-center">
+                        <span class="mr-2 text-3xl">✨</span>生き物の豆知識：「こんな驚きの生態なんです！」ポップ
+                    </h3>
+                    <p class="mb-6 text-sm md:text-base leading-relaxed">
+                        ただの生体としての説明だけでなく、その意外な特徴をわかりやすく伝えることで「ギャップ萌え」を生み出せるかもしれない。ですよね？？
+                    </p>
+                    <img src="src/pop.webp" alt="ユニークな手書きポップと、ポップを読む来場者の笑顔" class="w-full h-auto rounded-lg mt-3 shadow-md border border-emerald-200">
+                    <p class="mb-6 text-sm md:text-base leading-relaxed">
+                       <span class="text-gray-500 text-xs">※画像は竹島水族館の例です。</span> 
+                    </p>
+                </div>
+                    
+
+                <!-- Hands-on Experience Section -->
+                <div class="mb-10 p-6 border-l-4 border-orange-500 bg-orange-50 rounded-xl shadow-md">
+                    <h3 class="text-2xl md:text-3xl font-bold text-orange-800 mb-4 flex items-center">
+                        <span class="mr-2 text-3xl">🖐️</span>五感で感じる体験型展示
+                    </h3>
+                    <p class="mb-6 text-sm md:text-base leading-relaxed">
+                        視覚だけでなく触覚に訴えかけることで、より深い印象と学びを提供します。
+                    </p>
+                    <ul class="list-none ml-0 mt-4 space-y-4">
+                        <li class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="font-medium text-orange-600 text-lg flex items-center mb-1"><span class="mr-2 text-2xl">🐟</span>餌やり体験：</span>
+                            <p class="text-sm md:text-base pl-8">
+                                お客さんに餌やりをしてもらうことで普通の水族館では得られにくい、魚とのコミュニケーションを取れます。<br>👦🏻「餌うめぇか？」<br>🐡「ｳﾏｲｯ」
+                                <span class="text-gray-500 text-xs">(課題：餌の管理や給餌量の管理体制の確立が必要です。)</span>
+                            </p>
+                        </li>
+                        <li class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="font-medium text-orange-600 text-lg flex items-center mb-1"><span class="mr-2 text-2xl">🌊</span>タッチプール：</span>
+                            <p class="text-sm md:text-base pl-8">
+                                実際に海の生き物に触れることで、「こんなにかたいんだ！やわらかいんだ！水冷たい！」といった直接的な触覚体験を提供し、生き物の多様性や水の感覚を肌で感じてもらえます。
+                                <span class="text-gray-500 text-xs">(課題：専用の水槽や設備が必要となり、バリアフリーへの配慮が必要。また、展示する生き物の耐性やストレスへの配慮も考えなきゃです。)</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <img src="src/DSC08096.jpg" alt="子供たちが魚に餌を与えている、またはタッチプールで楽しそうに生き物に触れている様子" class="w-full h-auto rounded-lg mt-6 shadow-md border border-orange-200">
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab Content: 未来の水族館 -->
+        <div id="future" class="tab-content hidden">
+            <!-- Approach 2: Advanced Aquarium -->
+            <section class="bg-white p-6 md:p-8 rounded-2xl shadow-lg mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-6 section-divider">
+                    「まちかど水族館」を彩る二つのアプローチ
+                </h2>
+                <p class="mb-8 text-base md:text-lg leading-relaxed">
+                    私たちは、「まちかど水族館」を単なる展示施設に留めず、訪問者にとって記憶に残る感動体験を提供するため、二つのチームが連携して独創的なアプローチに取り組んでいます。
+                </p>
+                <div class="p-6 border-l-4 border-cyan-500 bg-cyan-50 rounded-xl shadow-md">
+                    <h3 class="text-2xl md:text-3xl font-bold text-cyan-800 mb-4 flex items-center">
+                        <span class="mr-2 text-3xl">🚀</span>２．先進的な水族館：未来を体感する技術とアイデア
+                    </h3>
+                    <p class="mb-6 text-sm md:text-base leading-relaxed">
+                        「先進的な水族館」チームは、従来の「水槽を眺める」だけの水族館の枠を超え、幻想的でワクワクする体験の提供を目指します。これまで魚や水族館に興味がなかった人々にも「面白い」「また来たい」と感じてもらうため、テクノロジーやユニークなアイデアを積極的に取り入れ、具現化します。
+                    </p>
+                    <ul class="list-none space-y-6 pl-0">
+                        <li class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <span class="font-semibold text-cyan-700 text-lg md:text-xl block mb-2">🌌 プラネタリウム水槽：</span>
+                            魚が星空を泳いでいたら面白くないですか？？水槽とプラネタリウムを融合させて、幻想的な空間を演出し、魚好き以外も楽しめる水族館をつくります。今のまちすいに足りないものは、「エモい空気感」だと思います。それを実現するために、限られた空間で周りの光を遮断し、わずかな星の輝きと、生き物のゆらめきのみを感じられるパーソナルな空間を作ります。
+                            <img src="src/pranetaqualium.png" alt="プラネタリウムのように天井に星が投影され、その下に水槽がある幻想的な空間" class="w-full h-auto rounded-lg mt-3 shadow-md border border-cyan-200">
+                            <span class="text-gray-500 text-xs">*画像はイメージです。</span>
+                        </li>
+                        <li class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <span class="font-semibold text-cyan-700 text-lg md:text-xl block mb-2">💡 インタラクティブプロジェクションマッピング：</span>
+                            水槽や壁面にプロジェクションマッピングを投影し、来場者の動きに反応するインタラクティブな展示を実現します。<br>
+                            <span class="italic text-gray-600 text-sm md:text-base">例：魚の群れが人の動きに合わせて形を変えたり、足元に深海の生物が現れるような演出で、遊びながら海の不思議を学ぶ体験を創出します。</span>デジタル技術を活用し、エンターテイメント性を高めることで、子供から大人まで楽しめる空間を提供します。
+                            <img src="/Users/codepro2020mbp02/Desktop/noroshi/src/projection.png" alt="壁面にプロジェクションマッピングが投影され、子供たちがそれに触れたり、映像が反応している様子" class="w-full h-auto rounded-lg mt-3 shadow-md border border-cyan-200">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Our Dream and Future Section -->
+            <section class="bg-blue-50 p-6 md:p-8 rounded-2xl shadow-lg">
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-6 section-divider">
+                    私たちの夢、そして未来へ
+                </h2>
+                <p class="mb-5 text-base md:text-lg leading-relaxed">
+                    私たちの最終的な目標は、分散型水族館の実績を通して「生き物を通した海洋教育の重要性」を証明し、函館市へ本格的な水族館の建設を提言することです。
+                </p>
+                <p class="mb-5 text-base md:text-lg leading-relaxed">
+                    その実現に向け、展示の質の向上とエンターテイメント要素の強化（Step 1）、専門家へのヒアリングによる知見の集約（Step 2）、そして函館市への政策提言（Step 3）というプロセスで活動を推進します。これまでの活動では、小田島水産様や菅原組様にご協力をいただいております。
+                </p>
+                <p class="text-base md:text-lg leading-relaxed">
+                    私たちは、専門知識や特別なスキルが必須であるとは考えていません。函館をより魅力的にしたいという熱い想いがあれば、誰もがこのプロジェクトの一員です。私たちと共に、函館に新しい未来を創出しませんか？
+                </p>
+                <div class="text-center mt-8">
+                    <a href="#" class="inline-block bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-blue-600 hover:to-cyan-700 transform hover:scale-105 transition-all duration-300">
+                        プロジェクトに参加する
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-800 text-white p-6 md:p-8 mt-10 rounded-t-3xl text-center shadow-inner">
+        <div class="container mx-auto">
+            <p class="text-sm md:text-base">&copy; 2025 まちかど水族館プロジェクト. All rights reserved.</p>
+        </div>
+    </footer>
+
+        <script>
+        // JavaScript for tab functionality
+        function openTab(evt, tabName) {
+            let i, tabContent, tabButtons;
+
+            // Get all elements with class="tab-content" and hide them
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tab-button" and remove the "active" class
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Quiz Data
+        const quizzes = [
+            {
+                question: "イシダイの黒と白の縞模様は、横縞？縦縞？",
+                options: ["横縞", "縦縞", "斜め縞", "模様ではない"],
+                answer: "横縞",
+                feedback: "イシダイの縞模様は横縞です。魚の縞模様の見方は、頭を上にして縦か横か見るんですよ！"
+            },
+            {
+                question: "口紅の原料にもなっている魚はどれ？",
+                options: ["リュウグウノツカイ", "タラ", "タイ", "タチウオ"],
+                answer: "タチウオ",
+                feedback: "タチウオには銀色でキラキラ光る成分「グアニン」という成分を持っています。これを口紅のパールに使うことがあるんです！"
+            },
+            {
+                question: "タコは心臓をいくつ持っているでしょう？",
+                options: ["1つ", "2つ", "3つ", "4つ"],
+                answer: "3つ",
+                feedback: "タコは3つの心臓を持っています。2つはエラに血液を送り、もう1つは全身に血液を送っています。すごいですね！"
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        const quizQuestionEl = document.getElementById('quiz-question');
+        const quizOptionsEl = document.getElementById('quiz-options');
+        const quizFeedbackEl = document.getElementById('quiz-feedback');
+        const nextQuestionBtn = document.getElementById('next-question-btn');
+        const restartQuizBtn = document.getElementById('restart-quiz-btn');
+
+        function loadQuiz() {
+            if (currentQuizIndex < quizzes.length) {
+                const quiz = quizzes[currentQuizIndex];
+                quizQuestionEl.textContent = quiz.question;
+                quizOptionsEl.innerHTML = ''; // Clear previous options
+                quizFeedbackEl.textContent = '';
+                quizFeedbackEl.classList.add('hidden');
+                nextQuestionBtn.classList.add('hidden');
+                restartQuizBtn.classList.add('hidden');
+                answered = false;
+
+                quiz.options.forEach((option, index) => {
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.classList.add('quiz-option', 'w-full', 'block', 'text-left');
+                    button.onclick = () => selectOption(button, option, quiz.answer);
+                    quizOptionsEl.appendChild(button);
+                });
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function selectOption(selectedButton, selectedAnswer, correctAnswer) {
+            if (answered) return; // Prevent multiple answers
+            answered = true;
+
+            const allOptions = quizOptionsEl.children;
+            for (let i = 0; i < allOptions.length; i++) {
+                allOptions[i].classList.remove('selected'); // Remove any previous selected state
+                allOptions[i].disabled = true; // Disable all options after selection
+            }
+
+            selectedButton.classList.add('selected'); // Highlight selected option
+
+            if (selectedAnswer === correctAnswer) {
+                selectedButton.classList.add('correct');
+                quizFeedbackEl.textContent = "お見事！ " + quizzes[currentQuizIndex].feedback; // Correct path
+                quizFeedbackEl.style.color = '#10b981'; /* Tailwind green-600 */
+                score++;
+            } else {
+                selectedButton.classList.add('incorrect');
+                // MODIFIED: Only display the incorrect message and the correct answer.
+                quizFeedbackEl.textContent = "残念！正解は「" + correctAnswer + "」です。";
+                quizFeedbackEl.style.color = '#ef4444'; /* Tailwind red-500 */
+                // Highlight the correct answer if incorrect
+                for (let i = 0; i < allOptions.length; i++) {
+                    if (allOptions[i].textContent === correctAnswer) {
+                        allOptions[i].classList.add('correct');
+                    }
+                }
+            }
+            quizFeedbackEl.classList.remove('hidden');
+
+            if (currentQuizIndex < quizzes.length - 1) {
+                nextQuestionBtn.classList.remove('hidden');
+            } else {
+                restartQuizBtn.classList.remove('hidden');
+            }
+        }
+
+        function showQuizResult() {
+            quizQuestionEl.textContent = `クイズ終了！あなたのスコアは ${score} / ${quizzes.length} です。`;
+            quizOptionsEl.innerHTML = '';
+            quizFeedbackEl.textContent = '';
+            quizFeedbackEl.classList.add('hidden');
+            nextQuestionBtn.classList.add('hidden');
+            restartQuizBtn.classList.remove('hidden');
+        }
+
+        nextQuestionBtn.addEventListener('click', () => {
+            currentQuizIndex++;
+            loadQuiz();
+        });
+
+        restartQuizBtn.addEventListener('click', () => {
+            currentQuizIndex = 0;
+            score = 0;
+            loadQuiz();
+        });
+
+        // Initialize quiz when the "展示の魅力" tab is opened
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initial click for default tab
+            document.getElementsByClassName("tab-button")[0].click();
+
+            // Add event listener to "展示の魅力" tab button to load quiz when clicked
+            document.querySelector("button[onclick=\"openTab(event, 'exhibits')\"]").addEventListener('click', () => {
+                // Only load quiz if it hasn't been loaded or if it's the start
+                if (currentQuizIndex === 0 && !answered || currentQuizIndex === quizzes.length) {
+                    loadQuiz();
+                }
+            });
+            // Also load if the tab is default
+            if(document.getElementById('exhibits').style.display === 'block'){
+                loadQuiz();
+            }
+        });
+    </script>
+</body>
+</html>
